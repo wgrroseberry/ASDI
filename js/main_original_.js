@@ -1,10 +1,13 @@
- 
- $('#index_demo_Gold.html').on('pageinit', function(){
+// Jav$(document).ready(function() {
+    // site code
+//$(document).ready(function() {
+    
+$('#index.html').on('pageinit', function(){
 	
-	      console.log("Line 26 on pageinit funtion");
-
-		var rcform = $('#recordmakeCreature');
-		    myCreatureErrorLink = $('#mycreatureErrorslink')
+	console.log("Line 7 on page init function");
+	
+	var rcform = $('#recordmakeCreature');
+		    myCreatureErrorLink = $('#home')
 		    rcform.validate({
 			invalidHandler: function(form, validator) {
 				myCreatureErrorLink.click();
@@ -15,10 +18,23 @@
 			console.log(" Line 15 store data right after this storeData line is run");
 		}
 	});
-	console.log("inside the pageinit function");
+	
 	//any other code needed for addItem page goes here
 	
 });
+    
+    $('#submit').on('click',function(){
+        var firstName = $('#firstName').val();
+        var lastName = $('#lastName').val();
+		
+        
+        $('#home').append('<p>' + firstName + ' ' + lastName + '</p>'); 
+		
+		 $('#index_demo_Gold.html').on('pageinit', function(){
+	
+	      console.log("Line 26 on pageinit funtion");
+
+		
  
  
  
@@ -44,39 +60,31 @@
 	console.log(key);
 	};
 
- 
- 
- 
- 
- 
+        
+        
+        
+        
+        
+        
+        
+    
 
+    // site code
+    
+    
+console.log("The Dom has started to process information inside");
+    
+    
+});    
 
- 
- 
- 
- 
- 
- 
- 
- 
+console.log("The Dom has started to process information outside");
+    
+    
+    
+    
+});
 
-
-
-
-
-
-		
-
-
-//The functions below can go inside or outside the pageinit function for the page in which it is needed.
-
-var autofillData = function (){
-	 
-};
-
-var getData = function(){
-
-};
+console.log("Working outside");
 
 var storeData = function(key){
 	    
@@ -123,21 +131,9 @@ var storeData = function(key){
 	
 }; 
 
-var	deleteItem = function (){
-			
-};
-					
-var clearLocal = function(){
-		if(localStorage.length === 0){
-			alert("There is no data to clear.")
-		}else{
-			localStorage.clear();
-			alert("All the Creature favorates have been cleared");
-			window.location.reload();
-			return false;	
-		}
-	
 
-};
+
+
+
 
 

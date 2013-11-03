@@ -30,15 +30,34 @@
         	</div>
             	<div data-role="content">
         	  		<form action="#" method="post" id="recordmakeCreature"></form>
+                    
+                    <form name="signup-form">
+    <label for="firstName">FirstName:</label>
+    <input id="firstName" name="firstName" type="text" required />
+    
+    <label for="LastName">LastName:</label>
+    <input id="lastName" name="lastName" type="text" required />
+    
+    <label for="email">Email:</label>
+    <input id="email" name="email" type="email" required />
+    
+    <label for="nameOfCreature">CreatureName:</label>
+    <input id="creatureName" name="creatureName" type="text" required/>
+    
+    <label for="birthDate">Date:</label>
+    <input id="date" name="date" type="date" required/>
+    
+    <input type="submit" value="saveMyCreature" />
+
+</form>
               		
-                    	<h2><a href="#">Customer Sign up Information</a></h2>
-                        <p>Creature description </p>
+                    	
                       </div>
                     
-                       <div data-role="fieldcontain">
-             <label for="FirstName">FirstName</label>
+                    
+           
             <input type="text" name="FirstName" id="FirstName" class="required letters"/>
-            </div>
+           
             
             <div data-role="fieldcontain">
              <label for="LastName">LastName</label>
@@ -51,8 +70,8 @@
                   
                     
        
-Email: <input id="email" placeholder="Email"/><br>
-Name of Creature: <input id="nameOfCreature" placeholder="Creature Name"/><br>
+
+
 
 Birthday of Creature: <input type="date" name="bday"/><br>
 <div data-role="fieldcontain">

@@ -132,7 +132,7 @@ var clearLocal = function(){
 			alert("There is no data to clear.")
 		}else{
 			localStorage.clear();
-			alert("All the Creature favorates have been cleared");
+			alert("All the pizza favorates have been cleared");
 			window.location.reload();
 			return false;	
 		}
@@ -141,3 +141,4 @@ var clearLocal = function(){
 };
 
 
+// JavaScript Document
