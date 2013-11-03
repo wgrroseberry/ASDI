@@ -1,3 +1,9 @@
 @charset "UTF-8";
 /* CSS Document */
 
+#main {
+	background: #30C;
+	min-height: 10px;
+	border-radius: 5px;
+}
+
