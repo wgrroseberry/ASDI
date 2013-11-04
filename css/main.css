@@ -7,3 +7,22 @@
 	border-radius: 5px;
 }
 
+input:not([type=submit]):invalid {
+    background-color: #ffdddd;
+}
+
+input:not([type=submit]):valid {
+    background-color: #ddffdd;
+}
+
+input:not([type=submit]):invalid:required {
+    background: #ffdddd url('http://developerdrive.developerdrive.netdna-cdn.com/wp-content/uploads/2013/08/asterisk1.png') no-repeat right top; 
+}
+
+input:not([type=submit]):valid:required {
+    background: #ddffdd url('http://developerdrive.developerdrive.netdna-cdn.com/wp-content/uploads/2013/08/asterisk1.png') no-repeat right top; 
+}
+
+input:not([type=submit]):optional {
+    background-color: #add1ef;
+}
