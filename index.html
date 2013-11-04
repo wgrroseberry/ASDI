@@ -20,26 +20,28 @@
 
         
 <section data-role="page" id="home">
-    	<div data-role="page" id="makeCreature" >
+    	
         <div data-role="header">
            <h1> Mecai </h1>
-           </div>
+          
            <p> Welcome to Create a Creature</p>
-      
+      </div>
        
-        	</div>
+        
+            
             	<div data-role="content">
-        	  		<form action="#" method="post" id="recordmakeCreature"></form>
+                
+        	  		<form action="#" method="post" id="recordmakeCreature">
                     
-                    <form name="signup-form">
+                  
     <label for="firstName">FirstName:</label>
-    <input id="firstName" name="firstName" type="text" required />
+    <input id="firstName" name="firstName" type="text" placeholder="FirstName" required autofocus/>
     
     <label for="lastName">LastName:</label>
-    <input id="lastName" name="lastName" type="text" required />
+    <input id="lastName" name="lastName" type="text" placeholder="LastName" required />
     
     <label for="email">Email:</label>
-    <input id="email" name="email" type="email" required />
+    <input id="email" name="email" type="email" placeholder="hello@gmail.com" required />
     
     <label for="name"></label>
     Name of Creature:
@@ -63,11 +65,26 @@
     <input type="reset" value="reset" data-theme="a" data-inline="true" />
     
     
-
+<a href="#creatureErrors" id="mycreatureErrorslink"  data-rel="dialog">Open Errors</a> 
 </form>
               		
                     	
                       </div>
+                      
+                      <div data-role="dialog" id="creatureErrors">
+        
+        
+         <div data-role="header" data-position="fixed">
+             <h1>Required Fields</h1>
+         </div>
+        <div data-role="content">
+        	 <ul>
+        	 	<li>Test</li>
+        	 	
+        	 </ul>
+            </div>
+         </div>
+         
                     
                     
            
@@ -94,6 +111,8 @@
     	<input type="submit" value="SaveCreature" data-theme="b" />
         
         <input type="reset" value="Reset" data-theme="a" data-inline="true" />
+        
+        <input type="button" value="clearStorage" data-theme="b" data-inline="true" />
         		
 
 		      </div>
@@ -103,9 +122,9 @@
                    
                     	<nav>
                         	<ul>
-                            	<li><a href="#" id="CreatureHome">Creature Home</a></li>
+                            	<li><a href="#" id="CreatureClear">Clear my Creatures</a></li>
                                 <li><a href="#" id="Add-A-Creature">Add a Creature</a></li>
-                                <li><a href="#" id="view">View A Creature</a></li>
+                                <li><a href="#" id="view">Display-A-Creature</a></li>
                                 </ul>
                                 </nav>
                                 </footer>
