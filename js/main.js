@@ -1,7 +1,67 @@
- 
-   $('#index.html').on('pageinit', function(){
+function getMyData() {
+			console.log("in the getmy data funtion line 89");
+		//toggleMyControls("on");
+		if (localStorage.length === 0) {
+			alert("There is no data in Local Storeage. I have loaded default data.");
+			getMyDefaultData();
+		} 
+		//Write information for the Local Storeage to the brower.
+		var makeDiv = document.createElement('div');
+		makeDiv.setAttribute("id", "items");
+		var makeList = document.createElement('ul');
+		makeDiv.appendChild(makeList);
+		// document.body is writeing the user contents to the screen
+		// for the user to see.
+///////////////////  Convert Into Jquary //////////////////////////////////////////////////////////////////////////////		
+		document.body.appendChild(makeDiv);
+		gu('items').style.display = "block";
+		for (var i = 0, len =localStorage.length; i<len;i++) {
+			console.log("localStorge.length ="+ i +"")
+			var makeli = document.createElement('li');
+			var createLinks = document.createElement('li');
+			makeList.appendChild(makeli);
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			// make from string to an object using json
+			var obj = JSON.parse(value);
+		        var makeSubLink = document.createElement('ul');
+			makeli.appendChild(makeSubLink);
+			// Makeing a sublist image dynamicly for each catagory of the list
+			//getMyCustomImage(obj.groups[1],makeSubLink);
+		//	console.log("groups")+ groups[1] + makeSubLink + " makesublink here";
+			for (var n in obj) {
+				var makeSubli = document.createElement('li');
+		 		makeSubLink.appendChild(makeSubli);
+				var optSubText = obj[n][0]+" "+obj[n][1];
+				makeSubli.innerHTML = optSubText;
+				makeSubLink.appendChild(createLinks);
+		
+			}
+			// makeEditAndDeleteLinks(localStorage.key(i), createLinks); // create our edit and delete links
+		}
+	}
+	//Get the image for the right category that is being displayed
+	function getMyCustomImage(pictureName, makeSubLink) {
+		var createLinks = document.createElement('li');
+		makeSubLink.appendChild(createLinks);
+		var newImg = document.createElement('img');
+		var setSrc = newImg.setAttribute("src", "images/"+ pictureName + ".png");
+		createLinks.appendChild(newImg);
+		
+		
+		
+	}
+	 
+   
+   
+   
+   
+   $('#homee').on('pageinit', function(){
+	   console.log("Page home has loaded.");
+	   
+	   
 	
-	      console.log("Line 26 on pageinit funtion");
+	   
 
 		var rcform = $('#recordmakeCreature');
 		    myCreatureErrorLink = $('#mycreatureErrorslink')
@@ -11,7 +71,8 @@
 			},
 			submitHandler: function() {
 		var data = rcform.serializeArray();
-			storeData(key);
+		storeData();
+			//storeData(key);
 			console.log("pageinit function Line 15 store data right after this storeData line is run");
 		}
 	});
@@ -19,6 +80,8 @@
 	//any other code needed for addItem page goes here
 	
 });
+
+
   function gu(x){
 		var theElement = document.getElementById(x);
 		return theElement;
@@ -27,6 +90,7 @@
   
   
   $(document).ready(function(){
+	  console.log("Inside line 92 document.ready function");
 	
 	var rcform = $('#recordmakeCreature');
 	
@@ -34,6 +98,9 @@
 		invalidHandler: function(form, validator) {},
 		submitHandler: function() {
 			var data = rcform.serializeArray();
+		 //   var data = rcform.stringify();
+		// localStorage.setItem(id, JSON.stringify(json[n]));
+		
 			
 			console.log(" Document.ready function parse data right after this storeData line is run line 49");
 			parseCreatureForm(data);
@@ -88,59 +155,7 @@
 		 $("#CreatureClear").click(function(){
 			 console.log("line 84");
 			 ///////////////////////
-		function getMyData() {
-			console.log("in the getmy data funtion line 89");
-		toggleMyControls("on");
-		if (localStorage.length === 0) {
-			alert("There is no data in Local Storeage. I have loaded default data.");
-			getMyDefaultData();
-		} 
-		//Write information for the Local Storeage to the brower.
-		var makeDiv = document.createElement('div');
-		makeDiv.setAttribute("id", "items");
-		var makeList = document.createElement('ul');
-		makeDiv.appendChild(makeList);
-		// document.body is writeing the user contents to the screen
-		// for the user to see.
-		document.body.appendChild(makeDiv);
-		gu('items').style.display = "block";
-		for (var i = 0, len =localStorage.length; i<len;i++) {
-			console.log("localStorge.length ="+ i +"")
-			var makeli = document.createElement('li');
-			var createLinks = document.createElement('li');
-			makeList.appendChild(makeli);
-			var key = localStorage.key(i);
-			var value = localStorage.getItem(key);
-			// make from string to an object using json
-			var obj = JSON.parse(value);
-		        var makeSubLink = document.createElement('ul');
-			makeli.appendChild(makeSubLink);
-			// Makeing a sublist image dynamicly for each catagory of the list
-			//getMyCustomImage(obj.groups[1],makeSubLink);
-		//	console.log("groups")+ groups[1] + makeSubLink + " makesublink here";
-			for (var n in obj) {
-				var makeSubli = document.createElement('li');
-		 		makeSubLink.appendChild(makeSubli);
-				var optSubText = obj[n][0]+" "+obj[n][1];
-				makeSubli.innerHTML = optSubText;
-				makeSubLink.appendChild(createLinks);
 		
-			}
-			// makeEditAndDeleteLinks(localStorage.key(i), createLinks); // create our edit and delete links
-		}
-	}
-	//Get the image for the right category that is being displayed
-	function getMyCustomImage(pictureName, makeSubLink) {
-		var createLinks = document.createElement('li');
-		makeSubLink.appendChild(createLinks);
-		var newImg = document.createElement('img');
-		var setSrc = newImg.setAttribute("src", "images/"+ pictureName + ".png");
-		createLinks.appendChild(newImg);
-		
-		
-		
-	}
-	
 		
 		
 		/////////////////////
