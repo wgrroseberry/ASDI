@@ -1,7 +1,7 @@
  
    $('#index.html').on('pageinit', function(){
 	
-	      console.log("Line 26 on pageinit funtion");
+	      console.log("Line 4 on pageinit funtion");
 
 		var rcform = $('#recordmakeCreature');
 		    myCreatureErrorLink = $('#mycreatureErrorslink')
@@ -16,6 +16,11 @@
 		}
 	});
 	console.log("inside the pageinit function");
+	
+	$(function(){
+		$('#creatureIndex').on('click', myFn);
+		console.log("myCreature index button fired");
+	});
 	//any other code needed for addItem page goes here
 	
 });
